@@ -1,7 +1,10 @@
 .statItem{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(134, 167, 156);
+    
 }
 
 .label {

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import { StatItem } from "./StatItem";
+import { StatItem } from "./StatItem/StatItem";
 import css from "./Statistics.module.css";
-// import data from "./data.json";
 
 
 export const Statistics = ( { stats } ) => {
@@ -21,3 +20,4 @@ Statistics.propTypes = {
     stats: PropTypes.array,
     statItem: PropTypes.func,
 };
+
