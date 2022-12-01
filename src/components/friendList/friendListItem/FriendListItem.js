@@ -4,12 +4,12 @@ import css from "./FriendListItem.module.css";
 
 
 export const FriendListItem = ({ friendData: {avatar, name, isOnline}}) => {
-    const spanClassNames = ["css.status"];
-    if (isOnline) spanClassNames.push("css.isOnline");
+    const classNames = ["status"];
+    if (isOnline) classNames.push("isOnline");
 
     return  <li className={css.item}>
                 <span 
-                className={spanClassNames.join(" ")}
+                className={classNames.join(" ")}
                 >
                 </span>
 
