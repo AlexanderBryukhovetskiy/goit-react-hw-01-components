@@ -1,7 +1,10 @@
 .friendList{
-
+    width: 70%;
+    padding: 10px 20px;
+    margin: 100px auto;
+    background-color: rgb(204, 168, 237);
 }
 
-.friendListItem{
-  
+.friendListItem + .friendListItem{
+    margin-top: 10px;
 }
