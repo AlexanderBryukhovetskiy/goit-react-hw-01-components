@@ -2,7 +2,7 @@
 display: flex;
 align-items: center;
 
-padding: 5px;
+padding: 10px;
 
 background-color: antiquewhite;
 border-radius: 4px;
@@ -23,11 +23,15 @@ box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px,
     background-color: green;
 }
 .avatar{
+    width: 90px;
+    height: 90px;
     margin: 0 10px;
+    border: 1px solid grey;
+    border-radius: 4px;
 
 }
 
 .name {
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 500;
 }

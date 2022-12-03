@@ -5,7 +5,7 @@ import css from "./FriendListItem.module.css";
 
 export const FriendListItem = ({ friendData: {avatar, name, isOnline}}) => {
     const classNames = [css['status']];
-    if (isOnline == true) classNames.push(css['isOnline']);
+    if (isOnline) classNames.push(css['isOnline']);
 
     return  <li className={css.item}>
                 <span 
