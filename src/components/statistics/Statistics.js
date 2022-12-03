@@ -8,7 +8,7 @@ export const Statistics = ( { stats } ) => {
                 <h2 className={css.title}>Upload stats</h2>
                 <ul className={css.statList}>
                     {stats.map( statItem => 
-                        <li key={statItem.id} className={css.item}>
+                        <li key={statItem.id} className={css.item} >
                             <StatItem statData={statItem}/>
                         </li>
                     )}
@@ -18,6 +18,6 @@ export const Statistics = ( { stats } ) => {
 
 Statistics.propTypes = {
     stats: PropTypes.array,
-    statItem: PropTypes.func,
-};
+    statItem: PropTypes.func
+}
 
