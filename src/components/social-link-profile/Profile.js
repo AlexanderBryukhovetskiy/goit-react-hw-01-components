@@ -1,8 +1,14 @@
 import css from './Profile.module.css';
 import PropTypes from "prop-types";
 
-export const Profile = ({userData : {avatar, username, tag, location, stats: { followers, views, likes }}}) => { 
-    return  <div className={css.profile}>
+export const Profile = ({userData: {
+    avatar, 
+    username, 
+    tag, 
+    location, 
+    stats: { followers, views, likes }
+    }}) => { 
+    return  (<div className={css.profile}>
                 <div className={css.description}>
                     <img src={avatar} alt="User avatar"
                         className={css.avatar} />
@@ -25,13 +31,16 @@ export const Profile = ({userData : {avatar, username, tag, location, stats: { f
                     </li>
                 </ul>
             </div>
+        )
 };
 
 Profile.propTypes = {
-    avatar: PropTypes.string,
-    username: PropTypes.string,
-    location: PropTypes.string,
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number
+    avatar: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    stats: PropTypes.shape({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired
+    }).isRequired,
 };

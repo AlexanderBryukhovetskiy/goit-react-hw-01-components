@@ -1,23 +1,38 @@
 import PropTypes from "prop-types";
-import { StatItem } from "./StatItem/StatItem";
 import css from "./Statistics.module.css";
+import { getRandomHexColor } from "./randomColor";
 
 
-export const Statistics = ( { stats } ) => {
-    return  <section className="statistics">
-                <h2 className={css.title}>Upload stats</h2>
-                <ul className={css.statList}>
-                    {stats.map( statItem => 
-                        <li key={statItem.id} className={css.item} >
-                            <StatItem statData={statItem}/>
-                        </li>
-                    )}
-                </ul>
+export const Statistics = ( { stats, title } ) => {
+    return  (
+        <section className={css.statistics}>
+            {title && <h2 className={css.title}>{title}</h2>}
+            <ul className={css.statList}>
+                {stats.map( ({ id, label, percentage  }) => 
+                    (<li key={id} 
+                        className={css.item} 
+                        style={{
+                            backgroundColor: getRandomHexColor(),
+                            width: `calc(100/${stats.length})`,
+                        }}
+                    >
+                        <span className={css.label}>{label}</span>
+                        <span className={css.percentage}>{percentage}%
+                        </span>
+                    </li>
+                ))}
+            </ul>
             </section>
-};
-
-Statistics.propTypes = {
-    stats: PropTypes.array,
-    statItem: PropTypes.func
+    );
 }
 
+Statistics.propTypes = {
+    title: PropTypes.string,
+    stats: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired,
+        }).isRequired
+    ).isRequired,
+};

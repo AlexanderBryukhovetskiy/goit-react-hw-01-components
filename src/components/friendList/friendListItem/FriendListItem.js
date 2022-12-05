@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
-// import clsx from "clsx";
 import css from "./FriendListItem.module.css";
 
 
-export const FriendListItem = ({ friendData: {avatar, name, isOnline}}) => {
+export const FriendListItem = ({avatar, name, isOnline}) => {
     const classNames = [css['status']];
     if (isOnline) classNames.push(css['isOnline']);
 
@@ -19,7 +18,7 @@ export const FriendListItem = ({ friendData: {avatar, name, isOnline}}) => {
 }
 
 FriendListItem.propTypes = {
-    avatar: PropTypes.string,
-    isOnline: PropTypes.bool,
-    name: PropTypes.string
+    avatar: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired
 }

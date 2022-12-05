@@ -5,8 +5,8 @@ import user  from "./social-link-profile/user.json";
 import { Statistics } from "./statistics/Statistics.js";
 import data from "./statistics/data.json";
 
-import friends from "./friendList/friends.json";
 import { FriendList } from "./friendList/FriendList";
+import friends from "./friendList/friends.json";
 
 import { TransactionHistory } from "./transactions/TransactionHistory";
 import transactions from "./transactions/transactions.json"
